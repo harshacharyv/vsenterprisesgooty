@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrise Solar Power | A VS Enterprise, Gooty</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #f59e0b; /* Solar Gold */
+      --primary-hover: #d97706;
+      --secondary: #10b981; /* Eco Green */
+      --dark-bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Navigation / Header */
+    nav {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .sub-brand {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .location-tag {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--secondary);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary) 0%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /* Services Grid */
+    .services {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Footer / Contact Section */
+    .contact-section {
+      background: #090d16;
+      padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 3rem;
+    }
+
+    .contact-container {
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+
+    .copyright {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <div>
+        <a href="#" class="logo">
+          <i class="fa-solid fa-sun"></i> Sunrise Solar Power
+        </a>
+        <span class="sub-brand">A VS Enterprise</span>
+      </div>
+      <div class="location-tag">
+        <i class="fa-solid fa-location-dot"></i> Gooty, AP
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Clean & Affordable Energy</span>
+      <h1>Powering Homes & Businesses with <span>Solar Energy</span></h1>
+      <p>High-efficiency solar panels, rooftop installations, and customized solar power solutions tailored for Gooty and surrounding regions.</p>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Our Solutions</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3>Rooftop Solar Solutions</h3>
+          <p>Cut your electricity bills significantly with custom residential rooftop solar installations designed for peak efficiency.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-building-flag"></i></div>
+          <h3>Commercial Solar Power</h3>
+          <p>Scalable solar energy setups for commercial buildings, schools, and factories to reduce operational energy costs.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+          <h3>Agricultural Solar Pumps</h3>
+          <p>Reliable solar-powered water pumps and off-grid solutions built for farms and agricultural lands around Gooty.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer Section -->
+  <footer class="contact-section">
+    <div class="container contact-container">
+      <h2>Get a Free Solar Quote</h2>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Connect with Sunrise Solar Power (A VS Enterprise) today.</p>
+
+      <div class="contact-links">
+        <!-- Call Button -->
+        <a href="tel:+919000000000" class="btn btn-primary">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/919000000000" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <!-- Email Button -->
+        <a href="mailto:contact@vsenterprises.com" class="btn btn-secondary">
+          <i class="fa-regular fa-envelope"></i> Send Email
+        </a>
+      </div>
+
+      <div class="copyright">
+        &copy; Sunrise Solar Power — A VS Enterprise, Gooty. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
