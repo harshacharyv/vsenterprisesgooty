@@ -138,15 +138,17 @@
       margin-bottom: 2.5rem;
     }
 
+    /* Adjusted to center 2 cards nicely */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 450px));
+      gap: 2rem;
+      justify-content: center;
     }
 
     .card {
       background: var(--card-bg);
-      padding: 2rem;
+      padding: 2.25rem;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.05);
       transition: transform 0.3s ease, border-color 0.3s ease;
@@ -266,22 +268,18 @@
       <h2 class="section-title">Our Solutions</h2>
       <div class="grid">
         
+        <!-- Section 1 -->
         <div class="card">
           <div class="card-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
           <h3>Rooftop Solar Solutions</h3>
           <p>Cut your electricity bills significantly with custom residential rooftop solar installations designed for peak efficiency.</p>
         </div>
 
+        <!-- Section 2 -->
         <div class="card">
           <div class="card-icon"><i class="fa-solid fa-building-flag"></i></div>
           <h3>Commercial Solar Power</h3>
           <p>Scalable solar energy setups for commercial buildings, schools, and factories to reduce operational energy costs.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
-          <h3>Agricultural Solar Pumps</h3>
-          <p>Reliable solar-powered water pumps and off-grid solutions built for farms and agricultural lands around Gooty.</p>
         </div>
 
       </div>
